@@ -196,7 +196,7 @@ export class VerseInterpreter implements AstVisitor<any> {
         return null;
     }
 
-    private lookupFunctionDecl(name: string): AstFunctionDecl | null {
+    public lookupFunctionDecl(name: string): AstFunctionDecl | any {
         const visitor = new FunctionSearchVisitor(name);
         for (const stmt of this.statements) {
             const functionDecl = stmt.accept(visitor);

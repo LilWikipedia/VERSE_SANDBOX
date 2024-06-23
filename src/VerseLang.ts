@@ -1,13 +1,13 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { AstStmt } from './src/ast/types/AstStmt';
-import { VerseInterpreter } from './src/interpreter/VerseInterpreter';
-import { Token } from './src/lexer/Token';
-import { VerseScanner } from './src/lexer/VerseScanner';
-import { VerseParser } from './src/parser/VerseParser';
-import { AstPrinter } from './src/util/AstPrinter';
+import { AstStmt } from './ast/types/AstStmt';
+import { VerseInterpreter } from './interpreter/VerseInterpreter';
+import { Token } from './lexer/Token';
+import { VerseScanner } from './lexer/VerseScanner';
+import { VerseParser } from './parser/VerseParser';
+import { AstPrinter } from './util/AstPrinter';
 
-class VerseLang {
+export class VerseLang {
     static PRINTER = new AstPrinter();
     static LOGGER: Console = console;
     static hadSyntaxError = false;
@@ -67,6 +67,7 @@ class VerseLang {
 
         const interp = new VerseInterpreter(statements);
         const mainFunction = interp.lookupFunctionDecl('Main');
+        
 
         if (!mainFunction) {
             this.LOGGER.error('No main function found');

@@ -1,6 +1,5 @@
-import { VerseLang } from '../../VerseLang';
-import { VFloat } from '../types/VFloat';
-import { VInteger } from '../types/VInteger';
+import { VFloat } from '../types/number/VFloat';
+import { VInteger } from '../types/number/VInteger';
 import { Token } from './Token';
 import { TokenType } from './TokenType';
 
@@ -196,8 +195,8 @@ export class VerseScanner {
         return this.current >= this.source.length;
     }
 
-    private error(message: string) {
-        VerseLang.syntaxError(this.line, this.col, message);
+    private error(message: string): any {
+       // VerseLang.syntaxError(this.line, this.col, message);
     }
 
     private isDigit(c: string): boolean {

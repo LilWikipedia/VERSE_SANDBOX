@@ -1,4 +1,4 @@
-import { VerseLang } from '../../VerseLang';
+import { VerseLang } from '../VerseLang';
 import { AstBlock, AstExpressionStmt, AstStmt } from '../ast/types';
 import { AstFunctionDecl, AstVariableDecl } from '../ast/types/decl';
 import { AstParameter } from '../ast/types/decl/AstParameter';
